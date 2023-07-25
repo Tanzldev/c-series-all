@@ -1,0 +1,3 @@
+﻿  thread.cpp
+e:\tzl_c++\thread\thread\thread.cpp(13): warning C4101: “hStdout”: 未引用的局部变量
+  thread.vcxproj -> E:\tzl_c++\thread\Debug\thread.exe
