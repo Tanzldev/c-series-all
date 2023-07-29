@@ -53,6 +53,7 @@ int main() {
 	CloseHandle(ghSemaphore);
 	cout << "ÂôÆ±½áÊø" << endl;
 	
+
 	system("pause");
 	return 0;
 }

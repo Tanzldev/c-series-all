@@ -1,0 +1,4 @@
+﻿  thread.cpp
+e:\tzl_c++\windows_thread\thread\thread.cpp(13): warning C4101: “hStdout”: 未引用的局部变量
+e:\tzl_c++\windows_thread\thread\thread.cpp(46): warning C4312: “类型强制转换”: 从“int”转换到更大的“LPVOID”
+  thread.vcxproj -> E:\tzl_c++\windows_thread\x64\Debug\thread.exe
