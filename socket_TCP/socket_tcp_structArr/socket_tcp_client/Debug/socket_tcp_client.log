@@ -1,5 +1,0 @@
-﻿  client_main.cpp
-e:\tzl_c++\socket_tcp\socket_tcp_structarr\socket_tcp_client\client_main.cpp(50): warning C4244: “参数”: 从“double”转换到“u_long”，可能丢失数据
-e:\tzl_c++\socket_tcp\socket_tcp_structarr\socket_tcp_client\client_main.cpp(15): warning C4101: “argp”: 未引用的局部变量
-e:\tzl_c++\socket_tcp\socket_tcp_structarr\socket_tcp_client\client_main.cpp(45): warning C4101: “pdata”: 未引用的局部变量
-  socket_tcp_client.vcxproj -> E:\tzl_c++\socket_TCP\socket_tcp_structArr\Debug\socket_tcp_client.exe
