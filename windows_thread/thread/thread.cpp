@@ -3,7 +3,6 @@
 #include<strsafe.h>
 #include <tchar.h>
 #include<string>
-#include<vector>
 using namespace std;
 
 int gticketId = 10;
@@ -53,7 +52,6 @@ int main() {
 	CloseHandle(ghSemaphore);
 	cout << "ÂôÆ±½áÊø" << endl;
 	
-
 	system("pause");
 	return 0;
 }
