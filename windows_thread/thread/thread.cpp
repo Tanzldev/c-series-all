@@ -11,7 +11,7 @@ HANDLE ghSemaphore;		// 信号量对象句柄
 DWORD WINAPI threadfunc(LPVOID param) {
 	HANDLE hStdout;
 	string chWin;
-	LONG cn;		// 长整型变量
+	LONG cn;		
 
 	if (param == 0) {
 		chWin = "甲";
