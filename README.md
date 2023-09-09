@@ -1,5 +1,5 @@
 # 1.c-series-all仓库介绍
-存放C++相关的学习资料、demo示例，包括多线程、网络编程、boost库、openCV、qt等内容
+存放C++相关的学习资料、demo示例，包括多线程、网络编程、boost库、openCV、qt内容
 
 # 2. 学习资料
 
