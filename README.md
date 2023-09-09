@@ -1,13 +1,21 @@
-# 1.c-series-all
-存放C++相关的学习资料和小demo，主要包括多线程、网络编程、boost
+# 1.c-series-all仓库介绍
+存放C++相关的学习资料、demo示例，包括多线程、网络编程、boost库、openCV、qt等内容
 
-# 2.多程序
+# 2. 学习资料
 
-# 3.网络编程
-## 3.1 socket基础
+# 3. demo示例
 
-## 3.2 tcp基础
+# 4. 多程序
 
-## 3.3 udp基础
+# 5.网络编程
+## 5.1 socket基础
 
-# 4.boost
+## 5.2 tcp基础
+
+## 5.3 udp基础
+
+# 6.boost库
+
+# 7. openCV库
+
+# 8. qt
