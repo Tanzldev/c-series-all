@@ -126,6 +126,32 @@ TreeNode* invertTree(TreeNode* root) {
 
 }
 
+// 二叉树的直径
+
+int Max;
+// 返回该节点的深度
+int depth(TreeNode* rt) {
+	if (rt == nullptr) {
+		return 0;
+	}
+	int L, R;
+	L = depth(rt->left);
+	R = depth(rt->right);
+
+	// 使用全局变量来记录当前节点的直径
+	// 若当前节点的左右子树的深度之和大于记录中的节点直径，则更新二叉树的直径
+	if (L + R > Max) {
+		Max = L + R;
+
+	}
+	return L > R ? L + 1 : R + 1;
+}
+
+int diameterOfbinaryTree(TreeNode* root) {
+	Max = 0;
+	depth(root);
+	return Max;
+}
 
 int main() {
 	
