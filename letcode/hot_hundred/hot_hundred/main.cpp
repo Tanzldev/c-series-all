@@ -126,7 +126,44 @@ TreeNode* invertTree(TreeNode* root) {
 
 }
 
+// 对称二叉树
+bool isSymmetric(TreeNode* root) {
+	// compare行数调用
+	return compare(root->left, root->right);
+}
 
+bool compare(TreeNode* left, TreeNode* right) {
+	if (left == nullptr&&right != nullptr) {
+		return false;
+	}
+	if (left != nullptr&&right == nullptr) {
+		return false;
+	}
+	if(left == nullptr&&right == nullptr) {
+		return true;
+	}
+	if (left->val != right->val) {
+		return false;
+	}
+	bool out = compare(left->left, right->right);
+	bool in = compare(left->right, right->left);
+	return out && in;
+}
+// 二叉树的直径
+// 直径：二叉树中任意两个节点最远的长度
+int diameterOfBinaryTree(TreeNode* root) {
+	return dfs(root);
+}
+int res = 0;
+int dfs(TreeNode* root) {
+	if (root == nullptr) {
+		return -1;
+	}
+	int r_deep = 1 + dfs(root->right);
+	int l_deep = 1 + dfs(root->left);
+	res = r_deep + l_deep > res ? r_deep + l_deep : res;
+	return r_deep > l_deep ? r_deep : l_deep;
+}
 int main() {
 	
 	system("pause");

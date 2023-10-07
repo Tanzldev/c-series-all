@@ -17,5 +17,8 @@
 # 6.boost库
 
 # 7. openCV库
+    工程demo建立
 
 # 8. qt
+
+
