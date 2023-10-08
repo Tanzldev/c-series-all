@@ -12,7 +12,7 @@ struct ListNode {
 	
 };
 
-// ¶þ²æÊ÷½Úµã
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 struct TreeNode {
 	int val;
 	TreeNode *left;
@@ -22,7 +22,7 @@ struct TreeNode {
 	TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 	
 };
-// Î²²å·¨ºÏ²¢Á½¸öÁ´±í
+// Î²ï¿½å·¨ï¿½Ï²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
 	vector<int> v;
 	while (list1 || list2) {
@@ -35,7 +35,7 @@ ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
 			list2 = list2->next;
 		}
 	}
-	sort(v.begin(), v.end());		// ÅÅÐò
+	sort(v.begin(), v.end());		// ï¿½ï¿½ï¿½ï¿½
 	if (v.size() == 0) {
 		return NULL;
 	}
@@ -56,7 +56,7 @@ ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
 
 	return head;
 }
-// ÅÐ¶ÏÁ´±íÊÇ·ñÓÐ»·
+// ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½Ð»ï¿½
 bool hasCycle1(ListNode *head) {
 	vector<ListNode*> v;
 	vector<ListNode*>::iterator it;
@@ -70,7 +70,7 @@ bool hasCycle1(ListNode *head) {
 	}
 	return false;
 }
-// ¿ìÂýÖ¸ÕëÅÐ¶ÏÊÇ·ñÓÐ»·
+// ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½Ð»ï¿½
 bool hasCycle2(ListNode *head) {
 	ListNode *p1 = head, *p2 = head;
 	if (p1 == NULL) {
@@ -86,7 +86,7 @@ bool hasCycle2(ListNode *head) {
 	return false;
 }
 
-// ¶þ²æÊ÷ÖÐÐò±éÀú:×ó¡ª¡ª>ÖÐ¡ª¡ª>ÓÒ
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:ï¿½ó¡ª¡ï¿½>ï¿½Ð¡ï¿½ï¿½ï¿½>ï¿½ï¿½
 vector<int> inorderTraversal(TreeNode* root) {
 	vector<int> res;
 	inOrder(root, res);	
@@ -101,7 +101,7 @@ void inOrder(TreeNode* root, vector<int> &v) {
 	inOrder(root->right, v);
 }
 
-// ¶þ²æÊ÷¸ß¶È¡ª¡ªµÝ¹é
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¶È¡ï¿½ï¿½ï¿½ï¿½Ý¹ï¿½
 int maxDepth(TreeNode* root) {
 	int ld = 0, rd = 0;
 	if (root == nullptr) {
@@ -112,7 +112,7 @@ int maxDepth(TreeNode* root) {
 	return ld > rd ? ld + 1 : rd + 1;
 }
 
-// ¶þ²æÊ÷½»»»×óÓÒ×ÓÊ÷
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 TreeNode* invertTree(TreeNode* root) {
 	if (root == nullptr) {
 		return NULL;
@@ -126,10 +126,10 @@ TreeNode* invertTree(TreeNode* root) {
 
 }
 
-// ¶þ²æÊ÷µÄÖ±¾¶
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½
 
 int Max;
-// ·µ»Ø¸Ã½ÚµãµÄÉî¶È
+// ï¿½ï¿½ï¿½Ø¸Ã½Úµï¿½ï¿½ï¿½ï¿½ï¿½
 int depth(TreeNode* rt) {
 	if (rt == nullptr) {
 		return 0;
@@ -138,8 +138,8 @@ int depth(TreeNode* rt) {
 	L = depth(rt->left);
 	R = depth(rt->right);
 
-	// Ê¹ÓÃÈ«¾Ö±äÁ¿À´¼ÇÂ¼µ±Ç°½ÚµãµÄÖ±¾¶
-	// Èôµ±Ç°½ÚµãµÄ×óÓÒ×ÓÊ÷µÄÉî¶ÈÖ®ºÍ´óÓÚ¼ÇÂ¼ÖÐµÄ½ÚµãÖ±¾¶£¬Ôò¸üÐÂ¶þ²æÊ÷µÄÖ±¾¶
+	// Ê¹ï¿½ï¿½È«ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½Ç°ï¿½Úµï¿½ï¿½Ö±ï¿½ï¿½
+	// ï¿½ï¿½ï¿½ï¿½Ç°ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö®ï¿½Í´ï¿½ï¿½Ú¼ï¿½Â¼ï¿½ÐµÄ½Úµï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½
 	if (L + R > Max) {
 		Max = L + R;
 
@@ -153,6 +153,38 @@ int diameterOfbinaryTree(TreeNode* root) {
 	return Max;
 }
 
+bool compare(TreeNode* left, TreeNode* right) {
+	if (left == nullptr&&right != nullptr) {
+		return false;
+	}
+	if (left != nullptr&&right == nullptr) {
+		return false;
+	}
+	if(left == nullptr&&right == nullptr) {
+		return true;
+	}
+	if (left->val != right->val) {
+		return false;
+	}
+	bool out = compare(left->left, right->right);
+	bool in = compare(left->right, right->left);
+	return out && in;
+}
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½
+// Ö±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½Ô¶ï¿½Ä³ï¿½ï¿½ï¿½
+int diameterOfBinaryTree(TreeNode* root) {
+	return dfs(root);
+}
+int res = 0;
+int dfs(TreeNode* root) {
+	if (root == nullptr) {
+		return -1;
+	}
+	int r_deep = 1 + dfs(root->right);
+	int l_deep = 1 + dfs(root->left);
+	res = r_deep + l_deep > res ? r_deep + l_deep : res;
+	return r_deep > l_deep ? r_deep : l_deep;
+}
 int main() {
 	
 	system("pause");
