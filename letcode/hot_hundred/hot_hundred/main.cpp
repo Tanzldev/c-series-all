@@ -1,6 +1,7 @@
 #include<iostream>
 #include<vector>
 #include<algorithm>
+#include<stack>
 using namespace std;
 
 struct ListNode {
@@ -185,6 +186,42 @@ int dfs(TreeNode* root) {
 	res = r_deep + l_deep > res ? r_deep + l_deep : res;
 	return r_deep > l_deep ? r_deep : l_deep;
 }
+
+// 只出现一次的数字
+int singleNums(vector<int>& nums) {
+	int res = 0;
+	for (int i = 0; i < nums.size(); i++) {
+		res = nums[i] ^ res;
+	}
+	return res;
+}
+// 数组中出现最多中的元素
+int majorityElement(vector<int>& nums) {
+	sort(nums.begin(), nums.end());
+	return nums[nums.size() / 2];
+}
+
+int majorityElement2(vector<int>& nums) {
+	stack<int> s;
+	for (int i = 0; i < nums.size(); i++) {
+		// stack is empty,insert element
+		if (s.empty()) {
+			s.push(nums[i]);
+			continue;
+		}
+
+		// top equal,insert element
+		if (nums[i] == s.top()) {
+			s.push(nums[i]);
+		}
+		// top different,insert element
+		else {
+			s.pop();
+		}
+	}
+	return s.top();
+}
+
 int main() {
 	
 	system("pause");
