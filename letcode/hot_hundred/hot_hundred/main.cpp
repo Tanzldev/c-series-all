@@ -1,4 +1,4 @@
-#include<iostream>
+﻿#include<iostream>
 #include<vector>
 #include<algorithm>
 #include<stack>
@@ -6,22 +6,22 @@ using namespace std;
 
 struct ListNode {
 	int val;
-	ListNode *next;
+	ListNode* next;
 	ListNode() : val(0), next(nullptr) {}
 	ListNode(int x) : val(x), next(nullptr) {}
-	ListNode(int x, ListNode *next) : val(x), next(next) {}
-	
+	ListNode(int x, ListNode* next) : val(x), next(next) {}
+
 };
 
 // �������ڵ�
 struct TreeNode {
 	int val;
-	TreeNode *left;
-	TreeNode *right;
+	TreeNode* left;
+	TreeNode* right;
 	TreeNode() : val(0), left(nullptr), right(nullptr) {}
 	TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-	TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
-	
+	TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
+
 };
 // β�巨�ϲ���������
 ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
@@ -40,14 +40,14 @@ ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
 	if (v.size() == 0) {
 		return NULL;
 	}
-	ListNode *p = new ListNode(-1, NULL);
-	ListNode *head = p;
+	ListNode* p = new ListNode(-1, NULL);
+	ListNode* head = p;
 	for (vector<int>::iterator it = v.begin(); it != v.end(); it++) {
 		if (it == v.begin()) {
 			p->val = *it;
 		}
 		else {
-			ListNode *t = new ListNode(-1, NULL);
+			ListNode* t = new ListNode(-1, NULL);
 			t->val = *it;
 			p->next = t;
 			p = t;
@@ -58,7 +58,7 @@ ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
 	return head;
 }
 // �ж������Ƿ��л�
-bool hasCycle1(ListNode *head) {
+bool hasCycle1(ListNode* head) {
 	vector<ListNode*> v;
 	vector<ListNode*>::iterator it;
 	while (head != NULL) {
@@ -72,8 +72,8 @@ bool hasCycle1(ListNode *head) {
 	return false;
 }
 // ����ָ���ж��Ƿ��л�
-bool hasCycle2(ListNode *head) {
-	ListNode *p1 = head, *p2 = head;
+bool hasCycle2(ListNode* head) {
+	ListNode* p1 = head, * p2 = head;
 	if (p1 == NULL) {
 		return false;
 	}
@@ -87,13 +87,7 @@ bool hasCycle2(ListNode *head) {
 	return false;
 }
 
-// �������������:�󡪡�>�С���>��
-vector<int> inorderTraversal(TreeNode* root) {
-	vector<int> res;
-	inOrder(root, res);	
-}
-
-void inOrder(TreeNode* root, vector<int> &v) {
+void inOrder(TreeNode* root, vector<int>& v) {
 	if (root == nullptr) {
 		return;
 	}
@@ -101,6 +95,14 @@ void inOrder(TreeNode* root, vector<int> &v) {
 	v.emplace_back(root->val);
 	inOrder(root->right, v);
 }
+// �������������:�󡪡�>�С���>��
+vector<int> inorderTraversal(TreeNode* root) {
+	vector<int> res;
+	inOrder(root, res);
+	return res;
+}
+
+
 
 // �������߶ȡ����ݹ�
 int maxDepth(TreeNode* root) {
@@ -118,7 +120,7 @@ TreeNode* invertTree(TreeNode* root) {
 	if (root == nullptr) {
 		return NULL;
 	}
-	TreeNode *temp = root->left;
+	TreeNode* temp = root->left;
 	root->left = root->right;
 	root->right = temp;
 	invertTree(root->left);
@@ -155,13 +157,13 @@ int diameterOfbinaryTree(TreeNode* root) {
 }
 
 bool compare(TreeNode* left, TreeNode* right) {
-	if (left == nullptr&&right != nullptr) {
+	if (left == nullptr && right != nullptr) {
 		return false;
 	}
-	if (left != nullptr&&right == nullptr) {
+	if (left != nullptr && right == nullptr) {
 		return false;
 	}
-	if(left == nullptr&&right == nullptr) {
+	if (left == nullptr && right == nullptr) {
 		return true;
 	}
 	if (left->val != right->val) {
@@ -171,11 +173,7 @@ bool compare(TreeNode* left, TreeNode* right) {
 	bool in = compare(left->right, right->left);
 	return out && in;
 }
-// ��������ֱ��
-// ֱ���������������������ڵ���Զ�ĳ���
-int diameterOfBinaryTree(TreeNode* root) {
-	return dfs(root);
-}
+
 int res = 0;
 int dfs(TreeNode* root) {
 	if (root == nullptr) {
@@ -186,6 +184,12 @@ int dfs(TreeNode* root) {
 	res = r_deep + l_deep > res ? r_deep + l_deep : res;
 	return r_deep > l_deep ? r_deep : l_deep;
 }
+// ��������ֱ��
+// ֱ���������������������ڵ���Զ�ĳ���
+int diameterOfBinaryTree(TreeNode* root) {
+	return dfs(root);
+}
+
 
 // 只出现一次的数字
 int singleNums(vector<int>& nums) {
@@ -223,7 +227,7 @@ int majorityElement2(vector<int>& nums) {
 }
 
 int main() {
-	
+	cout << "你好" << endl;
 	system("pause");
 	return 0;
 }
