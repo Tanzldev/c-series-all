@@ -1,4 +1,4 @@
-#include<iostream>
+﻿#include<iostream>
 #include<vector>
 #include<algorithm>
 #include<stack>
@@ -6,24 +6,24 @@ using namespace std;
 
 struct ListNode {
 	int val;
-	ListNode *next;
+	ListNode* next;
 	ListNode() : val(0), next(nullptr) {}
 	ListNode(int x) : val(x), next(nullptr) {}
-	ListNode(int x, ListNode *next) : val(x), next(next) {}
-	
+	ListNode(int x, ListNode* next) : val(x), next(next) {}
+
 };
 
-// �������ڵ�
+
 struct TreeNode {
 	int val;
-	TreeNode *left;
-	TreeNode *right;
+	TreeNode* left;
+	TreeNode* right;
 	TreeNode() : val(0), left(nullptr), right(nullptr) {}
 	TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-	TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
-	
+	TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
+
 };
-// β�巨�ϲ���������
+
 ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
 	vector<int> v;
 	while (list1 || list2) {
@@ -40,14 +40,14 @@ ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
 	if (v.size() == 0) {
 		return NULL;
 	}
-	ListNode *p = new ListNode(-1, NULL);
-	ListNode *head = p;
+	ListNode* p = new ListNode(-1, NULL);
+	ListNode* head = p;
 	for (vector<int>::iterator it = v.begin(); it != v.end(); it++) {
 		if (it == v.begin()) {
 			p->val = *it;
 		}
 		else {
-			ListNode *t = new ListNode(-1, NULL);
+			ListNode* t = new ListNode(-1, NULL);
 			t->val = *it;
 			p->next = t;
 			p = t;
@@ -57,8 +57,8 @@ ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
 
 	return head;
 }
-// �ж������Ƿ��л�
-bool hasCycle1(ListNode *head) {
+
+bool hasCycle1(ListNode* head) {
 	vector<ListNode*> v;
 	vector<ListNode*>::iterator it;
 	while (head != NULL) {
@@ -71,9 +71,9 @@ bool hasCycle1(ListNode *head) {
 	}
 	return false;
 }
-// ����ָ���ж��Ƿ��л�
-bool hasCycle2(ListNode *head) {
-	ListNode *p1 = head, *p2 = head;
+
+bool hasCycle2(ListNode* head) {
+	ListNode* p1 = head, * p2 = head;
 	if (p1 == NULL) {
 		return false;
 	}
@@ -87,7 +87,11 @@ bool hasCycle2(ListNode *head) {
 	return false;
 }
 
+<<<<<<< HEAD
 void inOrder(TreeNode* root, vector<int> &v) {
+=======
+void inOrder(TreeNode* root, vector<int>& v) {
+>>>>>>> ca1ca227c6c7b121ffa891ba6ea95e8142a2a377
 	if (root == nullptr) {
 		return;
 	}
@@ -104,7 +108,15 @@ vector<int> inorderTraversal(TreeNode* root) {
 
 
 
-// �������߶ȡ����ݹ�
+vector<int> inorderTraversal(TreeNode* root) {
+	vector<int> res;
+	inOrder(root, res);
+	return res;
+}
+
+
+
+
 int maxDepth(TreeNode* root) {
 	int ld = 0, rd = 0;
 	if (root == nullptr) {
@@ -115,12 +127,12 @@ int maxDepth(TreeNode* root) {
 	return ld > rd ? ld + 1 : rd + 1;
 }
 
-// ������������������
+
 TreeNode* invertTree(TreeNode* root) {
 	if (root == nullptr) {
 		return NULL;
 	}
-	TreeNode *temp = root->left;
+	TreeNode* temp = root->left;
 	root->left = root->right;
 	root->right = temp;
 	invertTree(root->left);
@@ -129,10 +141,10 @@ TreeNode* invertTree(TreeNode* root) {
 
 }
 
-// ��������ֱ��
+
 
 int Max;
-// ���ظýڵ�����
+
 int depth(TreeNode* rt) {
 	if (rt == nullptr) {
 		return 0;
@@ -141,8 +153,7 @@ int depth(TreeNode* rt) {
 	L = depth(rt->left);
 	R = depth(rt->right);
 
-	// ʹ��ȫ�ֱ�������¼��ǰ�ڵ��ֱ��
-	// ����ǰ�ڵ���������������֮�ʹ��ڼ�¼�еĽڵ�ֱ��������¶�������ֱ��
+
 	if (L + R > Max) {
 		Max = L + R;
 
@@ -157,13 +168,13 @@ int diameterOfbinaryTree(TreeNode* root) {
 }
 
 bool compare(TreeNode* left, TreeNode* right) {
-	if (left == nullptr&&right != nullptr) {
+	if (left == nullptr && right != nullptr) {
 		return false;
 	}
-	if (left != nullptr&&right == nullptr) {
+	if (left != nullptr && right == nullptr) {
 		return false;
 	}
-	if(left == nullptr&&right == nullptr) {
+	if (left == nullptr && right == nullptr) {
 		return true;
 	}
 	if (left->val != right->val) {
@@ -173,8 +184,11 @@ bool compare(TreeNode* left, TreeNode* right) {
 	bool in = compare(left->right, right->left);
 	return out && in;
 }
+<<<<<<< HEAD
 // ��������ֱ��
 // ֱ���������������������ڵ���Զ�ĳ���
+=======
+>>>>>>> ca1ca227c6c7b121ffa891ba6ea95e8142a2a377
 
 int res = 0;
 int dfs(TreeNode* root) {
@@ -189,6 +203,11 @@ int dfs(TreeNode* root) {
 int diameterOfBinaryTree(TreeNode* root) {
 	return dfs(root);
 }
+
+int diameterOfBinaryTree(TreeNode* root) {
+	return dfs(root);
+}
+
 
 // 只出现一次的数字
 int singleNums(vector<int>& nums) {
@@ -244,9 +263,13 @@ int climbStairs(int n) {
 }
 
 int main() {
+<<<<<<< HEAD
 	
 	cout << climbStairs(3) << endl;
 
+=======
+	cout << "你好" << endl;
+>>>>>>> ca1ca227c6c7b121ffa891ba6ea95e8142a2a377
 	system("pause");
 	return 0;
 }
