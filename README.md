@@ -20,5 +20,6 @@
     工程demo建立
 
 # 8. qt
+    qt-version:5.15.8
 
 

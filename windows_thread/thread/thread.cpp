@@ -21,7 +21,9 @@ DWORD WINAPI threadfunc(LPVOID param) {
 	}
 
 	while (1) {
+		// 等待信号量的响应结果
 		WaitForSingleObject(ghSemaphore, INFINITE);
+		// 当余票数量小于等于0时，卖票结束
 		if (gticketId <= 0) {
 			ReleaseSemaphore(ghSemaphore, 1, &cn);		// 释放信号量对象
 			break;
@@ -29,6 +31,7 @@ DWORD WINAPI threadfunc(LPVOID param) {
 
 		cout << chWin << "窗口卖出了" << gticketId << "号票" << endl;
 		gticketId--;
+		// 当前卖票结束，释放占用的信号量事件，是计数器+1
 		ReleaseSemaphore(ghSemaphore, 1, &cn);
 	}
 	return 1;

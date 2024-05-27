@@ -87,12 +87,6 @@ bool hasCycle2(ListNode *head) {
 	return false;
 }
 
-// �������������:�󡪡�>�С���>��
-vector<int> inorderTraversal(TreeNode* root) {
-	vector<int> res;
-	inOrder(root, res);	
-}
-
 void inOrder(TreeNode* root, vector<int> &v) {
 	if (root == nullptr) {
 		return;
@@ -101,6 +95,14 @@ void inOrder(TreeNode* root, vector<int> &v) {
 	v.emplace_back(root->val);
 	inOrder(root->right, v);
 }
+// �������������:�󡪡�>�С���>��
+vector<int> inorderTraversal(TreeNode* root) {
+	vector<int> res;
+	inOrder(root, res);	
+	return res;
+}
+
+
 
 // �������߶ȡ����ݹ�
 int maxDepth(TreeNode* root) {
@@ -173,9 +175,7 @@ bool compare(TreeNode* left, TreeNode* right) {
 }
 // ��������ֱ��
 // ֱ���������������������ڵ���Զ�ĳ���
-int diameterOfBinaryTree(TreeNode* root) {
-	return dfs(root);
-}
+
 int res = 0;
 int dfs(TreeNode* root) {
 	if (root == nullptr) {
@@ -185,6 +185,9 @@ int dfs(TreeNode* root) {
 	int l_deep = 1 + dfs(root->left);
 	res = r_deep + l_deep > res ? r_deep + l_deep : res;
 	return r_deep > l_deep ? r_deep : l_deep;
+}
+int diameterOfBinaryTree(TreeNode* root) {
+	return dfs(root);
 }
 
 // 只出现一次的数字
@@ -222,8 +225,28 @@ int majorityElement2(vector<int>& nums) {
 	return s.top();
 }
 
+int climbStairs(int n) {
+	int a = 1;
+	int b = 2;
+	int t;
+	if(n==1){
+		return a;
+	}
+	else if (n == 2) {
+		return b;
+	}
+	for (int i = 2; i < n; i++) {
+		t = a + b;
+		a = b;
+		b = t;
+	}
+	return b;
+}
+
 int main() {
 	
+	cout << climbStairs(3) << endl;
+
 	system("pause");
 	return 0;
 }
